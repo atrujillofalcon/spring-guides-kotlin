@@ -7,7 +7,7 @@ import org.springframework.stereotype.Component
 import java.util.concurrent.CountDownLatch
 
 @Component
-open class KotlinReceiver(@Autowired val latch: CountDownLatch) {
+class KotlinReceiver(@Autowired val latch: CountDownLatch) {
 
     val LOGGER: Logger = LoggerFactory.getLogger(KotlinReceiver::class.java)
 

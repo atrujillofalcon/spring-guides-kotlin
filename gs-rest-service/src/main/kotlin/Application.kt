@@ -4,7 +4,7 @@ import org.springframework.boot.SpringApplication
 import org.springframework.boot.autoconfigure.SpringBootApplication
 
 @SpringBootApplication(scanBasePackages = arrayOf("controller**"))
-open class Application {
+class Application {
     val log: Logger = LoggerFactory.getLogger(Application::class.java)
 
     companion object {

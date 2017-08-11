@@ -6,7 +6,7 @@ import org.springframework.cloud.netflix.eureka.server.EnableEurekaServer
 
 @EnableEurekaServer
 @SpringBootApplication(scanBasePackages = arrayOf("controller**"))
-open class EurekaServiceApplication {
+class EurekaServiceApplication {
     val log: Logger = LoggerFactory.getLogger(EurekaServiceApplication::class.java)
 
     companion object {

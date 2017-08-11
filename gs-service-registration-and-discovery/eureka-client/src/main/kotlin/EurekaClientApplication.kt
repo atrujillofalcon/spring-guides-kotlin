@@ -7,7 +7,7 @@ import org.springframework.cloud.client.discovery.EnableDiscoveryClient
 
 @EnableDiscoveryClient
 @SpringBootApplication(scanBasePackages = arrayOf("controller**"))
-open class EurekaClientApplication {
+class EurekaClientApplication {
     val log: Logger = LoggerFactory.getLogger(EurekaClientApplication::class.java)
 
     companion object {

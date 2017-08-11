@@ -13,7 +13,7 @@ import java.nio.file.Paths
 import java.util.stream.Stream
 
 @Service
-open class FileSystemStorageService @Autowired
+class FileSystemStorageService @Autowired
 constructor(properties: StorageProperties) : StorageService {
 
     private val rootLocation: Path = Paths.get(properties.location)

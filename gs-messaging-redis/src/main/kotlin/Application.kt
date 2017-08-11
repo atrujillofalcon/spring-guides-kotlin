@@ -12,7 +12,7 @@ import receiver.KotlinReceiver
 import java.util.concurrent.CountDownLatch
 
 @SpringBootApplication(scanBasePackages = arrayOf("receiver**"))
-open class Application {
+class Application {
 
     companion object {
         val LOGGER: Logger = LoggerFactory.getLogger(Application::class.java)
@@ -31,19 +31,19 @@ open class Application {
     }
 
     @Bean
-    open fun latch(): CountDownLatch = CountDownLatch(1)
+    fun latch(): CountDownLatch = CountDownLatch(1)
 
     @Bean
-    open fun receiver(latch: CountDownLatch): KotlinReceiver = KotlinReceiver(latch)
+    fun receiver(latch: CountDownLatch): KotlinReceiver = KotlinReceiver(latch)
 
     @Bean
-    open fun template(connectionFactory: RedisConnectionFactory): StringRedisTemplate = StringRedisTemplate(connectionFactory)
+    fun template(connectionFactory: RedisConnectionFactory): StringRedisTemplate = StringRedisTemplate(connectionFactory)
 
     @Bean
-    open fun listenerAdapter(receiver: KotlinReceiver): MessageListenerAdapter = MessageListenerAdapter(receiver, "receiveMessage")
+    fun listenerAdapter(receiver: KotlinReceiver): MessageListenerAdapter = MessageListenerAdapter(receiver, "receiveMessage")
 
     @Bean
-    open fun container(connectionFactory: RedisConnectionFactory, listenerAdapter: MessageListenerAdapter): RedisMessageListenerContainer {
+    fun container(connectionFactory: RedisConnectionFactory, listenerAdapter: MessageListenerAdapter): RedisMessageListenerContainer {
         val container = RedisMessageListenerContainer()
         container.connectionFactory = connectionFactory
         container.addMessageListener(listenerAdapter, PatternTopic("chat"))

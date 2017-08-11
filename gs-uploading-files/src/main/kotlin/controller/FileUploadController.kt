@@ -15,7 +15,7 @@ import storage.StorageFileNotFoundException
 import java.util.stream.Collectors
 
 @Controller
-open class FileUploadController {
+class FileUploadController {
 
     //    This is flagged as lateinit because it will be injected by Spring in the constructor
     private lateinit var storageService: StorageService

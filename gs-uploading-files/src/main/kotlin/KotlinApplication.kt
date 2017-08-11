@@ -8,7 +8,7 @@ import storage.StorageProperties
 
 @SpringBootApplication(scanBasePackages = arrayOf("service**", "storage**", "controller**"))
 @EnableConfigurationProperties(StorageProperties::class)
-open class KotlinApplication {
+class KotlinApplication {
 
     companion object {
         @JvmStatic
@@ -18,7 +18,7 @@ open class KotlinApplication {
     }
 
     @Bean
-    open fun init(storageService: StorageService) = CommandLineRunner {
+    fun init(storageService: StorageService) = CommandLineRunner {
         storageService.deleteAll()
         storageService.init()
     }
