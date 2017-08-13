@@ -9,11 +9,10 @@ import java.util.concurrent.atomic.AtomicLong
 @RestController
 class GreetingController {
     companion object {
-        val template = "Hello, %s!"
         val counter = AtomicLong()
     }
 
     @RequestMapping("/greeting")
     fun greeting(@RequestParam(value = "name", defaultValue = "World") name: String): Greeting =
-            Greeting(counter.incrementAndGet(), String.format(template, name))
+            Greeting(counter.incrementAndGet(), "Hello, $name!")
 }
