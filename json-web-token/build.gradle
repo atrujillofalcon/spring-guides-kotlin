@@ -1,0 +1,13 @@
+jar {
+    baseName = 'json-web-token'
+    version =  '0.1.0'
+}
+
+
+dependencies {
+	compile('org.springframework.boot:spring-boot-starter-data-jpa')
+	compile('org.springframework.boot:spring-boot-starter-security')
+	runtime('org.hsqldb:hsqldb')
+	testCompile('org.springframework.boot:spring-boot-starter-test')
+	testCompile('org.springframework.security:spring-security-test')
+}
